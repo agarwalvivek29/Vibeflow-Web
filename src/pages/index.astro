@@ -1626,6 +1626,89 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 600px) {
     .changelog-date { margin-left: 0; width: 100%; }
   }
+
+  /* ═══════════════════════════════════════════════════════════ */
+  /* GLOBAL MOBILE FIXES                                        */
+  /* ═══════════════════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    /* Banner: stack text and link vertically */
+    .banner { padding: 0.75rem 0; }
+    .banner p {
+      flex-direction: column;
+      gap: 0.3rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    /* Hero: full-width CTA buttons */
+    .hero-actions {
+      flex-direction: column;
+    }
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Hero demo window: wrap pipeline steps */
+    .demo-pipeline {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+    .pipeline-arrow { display: none; }
+
+    /* Reduce section vertical padding on mobile */
+    .why-section,
+    .demo-section,
+    .features-section,
+    .how-section,
+    .engines-section,
+    .arch-section,
+    .changelog-section { padding: 3.5rem 0; }
+
+    .section-header { margin-bottom: 2.5rem; }
+    .section-header h2 { font-size: clamp(2rem, 8vw, 3rem); }
+
+    /* CTA */
+    .cta-section { padding: 4rem 0; }
+    .cta-section h2 { font-size: clamp(2.5rem, 10vw, 4rem); }
+    .cta-actions { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    .cta-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+    .cta-steps code { font-size: 0.72rem; padding: 0.75rem 1rem; text-align: left; }
+
+    /* Architecture */
+    .arch-grid { grid-template-columns: 1fr; }
+
+    /* Feature large card: block layout */
+    .feature-large { display: block; }
+    .feature-large .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .footer-brand { grid-column: 1; }
+
+    /* Pipeline flow in How it Works */
+    .pipeline-flow { flex-wrap: wrap; gap: 0.5rem; min-width: unset; justify-content: center; }
+    .pipe-connector { display: none; }
+    .pipe-node { flex: 0 0 calc(50% - 0.5rem); min-width: unset; }
+
+    /* Engines */
+    .engines-grid { gap: 2rem; }
+
+    /* Demo video */
+    .demo-video-wrap { padding: 0; }
+    .demo-video-inner { border-radius: 12px; }
+
+    /* Changelog */
+    .changelog-entry { padding: 2rem 0; }
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 0 1.25rem; }
+    .hero-title { font-size: clamp(2.75rem, 12vw, 4rem); }
+    .pipe-node { flex: 0 0 100%; }
+    .comparison-grid { grid-template-columns: 1fr; }
+  }
 </style>
 
 <script>
