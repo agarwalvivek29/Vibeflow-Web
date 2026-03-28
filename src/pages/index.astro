@@ -9,9 +9,9 @@ import Layout from '../layouts/Layout.astro';
 <!-- ═══════════════════════════════════════════════════════════ -->
 <div class="banner">
   <div class="container">
-    <p>Open source & free forever — runs 100% on your Mac, no cloud needed
-      <a href="https://github.com/agarwalvivek29/VibeFlow" target="_blank" rel="noopener">
-        Star on GitHub &rarr;
+    <p>v1.2 out now &mdash; Dark Mode, Richer History &amp; UX Polish &mdash; open source &amp; free forever
+      <a href="https://github.com/agarwalvivek29/VibeFlow/releases/tag/v1.2" target="_blank" rel="noopener">
+        See What's New &rarr;
       </a>
     </p>
   </div>
@@ -35,9 +35,10 @@ import Layout from '../layouts/Layout.astro';
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
       <a href="#how-it-works">How it Works</a>
       <a href="#engines">Engines</a>
-      <a href="#architecture">Architecture</a>
+      <a href="#whats-new">What's New</a>
     </div>
     <div class="nav-cta">
       <a href="https://github.com/agarwalvivek29/VibeFlow" target="_blank" rel="noopener" class="btn btn-outline">
@@ -56,9 +57,10 @@ import Layout from '../layouts/Layout.astro';
   <!-- Mobile menu -->
   <div class="nav-mobile" id="nav-mobile">
     <a href="#features">Features</a>
+    <a href="#demo">Demo</a>
     <a href="#how-it-works">How it Works</a>
     <a href="#engines">Engines</a>
-    <a href="#architecture">Architecture</a>
+    <a href="#whats-new">What's New</a>
     <a href="https://github.com/agarwalvivek29/VibeFlow" target="_blank" rel="noopener">GitHub</a>
   </div>
 </nav>
@@ -148,6 +150,30 @@ import Layout from '../layouts/Layout.astro';
           <div class="float-icon" style="--x: -30px; --y: 80px; --d: 2.8s">Safari</div>
           <div class="float-icon" style="--x: 50px; --y: -80px; --d: 3.2s">Xcode</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- DEMO VIDEO                                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="demo-section" id="demo">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">See It In Action</p>
+      <h2>Watch the demo</h2>
+      <p class="section-desc">Hold a key, speak, release — see how VibeFlow turns voice into polished text in any macOS app.</p>
+    </div>
+    <div class="demo-video-wrap">
+      <div class="demo-video-inner">
+        <iframe
+          src="https://www.youtube.com/embed/uCnKX6ldIxQ"
+          title="VibeFlow Demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </div>
@@ -443,6 +469,75 @@ import Layout from '../layouts/Layout.astro';
         <span class="tech-pill">AppKit</span>
         <span class="tech-pill">CoreAudio</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- WHAT'S NEW                                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="changelog-section" id="whats-new">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Changelog</p>
+      <h2>What's new</h2>
+      <p class="section-desc">VibeFlow ships fast. Here's what landed recently.</p>
+    </div>
+    <div class="changelog-list">
+
+      <div class="changelog-entry">
+        <div class="changelog-meta">
+          <span class="changelog-version">v1.2</span>
+          <span class="changelog-badge badge-latest">Latest</span>
+          <span class="changelog-date">Mar 28, 2026</span>
+        </div>
+        <h3 class="changelog-title">Dark Mode &amp; UX Polish</h3>
+        <ul class="changelog-items">
+          <li><strong>Dark Mode</strong> &mdash; Appearance toggle (Light / Dark / System) in Settings, saved across launches. All views render correctly in both modes.</li>
+          <li><strong>Richer History</strong> &mdash; Tap any transcription to see the full text, WPM speed, and duration. Average WPM now shown on Dashboard. WPM shown inline on each history row.</li>
+          <li><strong>Recording Quality</strong> &mdash; 300 ms grace delay before stopping so the last word is never cut off.</li>
+          <li><strong>Settings Cleanup</strong> &mdash; Microphone permissions surfaced at the top, redundant Formality setting removed.</li>
+          <li><strong>Bug Fixes</strong> &mdash; Window remembers its size between launches. AI model used is now accurately logged per transcription.</li>
+        </ul>
+        <a href="https://github.com/agarwalvivek29/VibeFlow/releases/tag/v1.2" target="_blank" rel="noopener" class="changelog-link">Full release notes &rarr;</a>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-meta">
+          <span class="changelog-version">v1.1.0</span>
+          <span class="changelog-date">Mar 28, 2026</span>
+        </div>
+        <h3 class="changelog-title">Memory &amp; Reliability</h3>
+        <ul class="changelog-items">
+          <li><strong>Critical Memory Fix</strong> &mdash; Eliminated a staircase memory leak (400 MB → 4+ GB) caused by 7 reactive observers rebuilding models on every keystroke. Models now only rebuild on Save Settings.</li>
+          <li><strong>Model Load Error Surfacing</strong> &mdash; If WhisperKit or the local SLM fails to load, a red banner with Retry / Change Model appears on the Dashboard. Recording is blocked until the model is healthy.</li>
+          <li><strong>HUD Processing State</strong> &mdash; Spinner + "Processing…" shown after release while transcription + AI cleanup runs. A red error pill appears for 3 s on failure.</li>
+          <li><strong>Settings Save UX</strong> &mdash; All changes are held locally until you press Save Settings. Navigating away with unsaved changes shows a discard confirmation.</li>
+        </ul>
+        <a href="https://github.com/agarwalvivek29/VibeFlow/releases/tag/v1.1.0" target="_blank" rel="noopener" class="changelog-link">Full release notes &rarr;</a>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-meta">
+          <span class="changelog-version">v1.0.0</span>
+          <span class="changelog-date">Mar 24, 2026</span>
+        </div>
+        <h3 class="changelog-title">Initial Release</h3>
+        <ul class="changelog-items">
+          <li>Universal dictation across any macOS app via global hotkey</li>
+          <li>Dual speech engines: Apple Speech &amp; WhisperKit</li>
+          <li>Dual text cleanup: Local SLM (Qwen 0.5B) &amp; Remote LLM</li>
+          <li>Dynamic Island HUD with live waveform</li>
+          <li>Custom dictionary, writing styles, transcription history</li>
+        </ul>
+        <a href="https://github.com/agarwalvivek29/VibeFlow/releases/tag/v1.0.0" target="_blank" rel="noopener" class="changelog-link">Full release notes &rarr;</a>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="https://github.com/agarwalvivek29/VibeFlow/releases" target="_blank" rel="noopener" class="btn btn-outline">
+        View all releases on GitHub &rarr;
+      </a>
     </div>
   </div>
 </section>
@@ -1409,6 +1504,127 @@ import Layout from '../layouts/Layout.astro';
   .giant-logo {
     width: 100%;
     height: auto;
+  }
+
+  /* ═══════════════════════════════════════════════════════════ */
+  /* DEMO VIDEO                                                 */
+  /* ═══════════════════════════════════════════════════════════ */
+  .demo-section {
+    padding: 6rem 0;
+    background: white;
+  }
+  .demo-video-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .demo-video-inner {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .demo-video-inner iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  /* ═══════════════════════════════════════════════════════════ */
+  /* CHANGELOG / WHAT'S NEW                                     */
+  /* ═══════════════════════════════════════════════════════════ */
+  .changelog-section {
+    padding: 6rem 0;
+    background: white;
+  }
+  .changelog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .changelog-entry {
+    padding: 2.5rem 0;
+    border-bottom: 1.5px solid rgba(26,26,26,0.06);
+  }
+  .changelog-entry:first-child {
+    border-top: 1.5px solid rgba(26,26,26,0.06);
+  }
+  .changelog-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .changelog-version {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    background: rgba(26,26,26,0.06);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+  }
+  .changelog-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .badge-latest {
+    background: var(--accent-green);
+    color: white;
+  }
+  .changelog-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+  .changelog-title {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+  .changelog-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+  .changelog-items li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .changelog-items li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: 700;
+  }
+  .changelog-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .changelog-link:hover { opacity: 0.7; }
+
+  @media (max-width: 600px) {
+    .changelog-date { margin-left: 0; width: 100%; }
   }
 </style>
 
