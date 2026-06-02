@@ -21,7 +21,8 @@ const { title, description = "VibeFlow — Open-source voice-to-text for enginee
     <slot />
     <script>
       import { inject } from "@hellyeah/x-ray/astro";
-      inject("019e658e-9cb7-7000-aa71-562e001e5f58", {
+      inject({
+        websiteId: "019e658e-9cb7-7000-aa71-562e001e5f58",
         domains: "vibeflow.agarwalvivek.com",
       });
     </script>
